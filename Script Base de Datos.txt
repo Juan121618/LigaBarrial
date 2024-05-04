@@ -1,0 +1,52 @@
+-- Tabla de usuarios
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    rol ENUM('Administrador', 'Representante', 'Digitador') NOT NULL,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL -- La contraseña se almacenará encriptada
+);
+
+-- Tabla de equipos
+CREATE TABLE Equipos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    directiva VARCHAR(100),
+    año_fundacion YEAR,
+    colores VARCHAR(50),
+    escudo BLOB -- Se almacenará la imagen del escudo como un objeto binario
+);
+
+-- Tabla de jugadores
+CREATE TABLE Jugadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    equipo_id INT NOT NULL,
+    nombre_completo VARCHAR(100) NOT NULL,
+    fecha_nacimiento DATE,
+    numero_cedula VARCHAR(20),
+    direccion VARCHAR(200),
+    foto BLOB, -- Se almacenará la foto del jugador como un objeto binario
+    FOREIGN KEY (equipo_id) REFERENCES Equipos(id)
+);
+
+-- Tabla de actividades
+CREATE TABLE Actividades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    equipo_local_id INT NOT NULL,
+    equipo_visitante_id INT NOT NULL,
+    goles_local INT,
+    goles_visitante INT,
+    tarjetas_amarillas INT,
+    tarjetas_rojas INT,
+    FOREIGN KEY (equipo_local_id) REFERENCES Equipos(id),
+    FOREIGN KEY (equipo_visitante_id) REFERENCES Equipos(id)
+);
+
+-- Tabla de reportes
+CREATE TABLE Reportes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    semana INT NOT NULL,
+    tipo ENUM('Tarjetas Amarillas', 'Goles', 'Tabla de Goleadores', 'Tabla de Posiciones') NOT NULL,
+    contenido TEXT NOT NULL
+);
