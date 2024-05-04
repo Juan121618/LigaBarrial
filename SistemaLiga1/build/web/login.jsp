@@ -1,6 +1,15 @@
+<%-- 
+    Document   : index
+    Created on : 2 may. 2024, 19:47:44
+    Author     : Juan
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
 
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Liga Barrial Semillitas del Futuro</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,122 +83,38 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="navbar align-self-center d-flex">
-                        <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                                <div class="input-group-text">
-                                    <i class="fa fa-fw fa-search"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
 
             </div>
         </nav>
         <!-- Close Header -->
 
-        <!-- Start Banner Hero -->
-        <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row p-5">
-                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="./assets/img/banner_img_01_1.jpg" alt="">
-                            </div>
-                            <div class="col-lg-6 mb-0 d-flex align-items-center">
-                                <div class="text-align-left align-self-center">
-                                    <h1 class="h1 text-success"><b>Liga</b> Barrial</h1>
-                                    <h3 class="h2">Semillitas del Futuro</h3>
-                                    <p>
-                                        ¡Bienvenido a la Liga Barrial Semillitas del Futuro! Somos más que un torneo, somos una comunidad apasionada por el fútbol y el desarrollo integral de nuestros jóvenes. En nuestra liga, no solo se trata de marcar goles, sino de cultivar valores como el trabajo en equipo, la disciplina y el respeto. Con entrenadores comprometidos y un ambiente familiar, estamos sembrando las semillas del futuro, formando no solo grandes deportistas, sino también grandes personas. Únete a nosotros y sé parte de esta emocionante experiencia donde cada partido es una oportunidad para crecer y aprender
-                                    </p>
-                                </div>
-                            </div>
+        <div class="container mt-4 col-lg-4">
+            <div class="card col-sm-10">
+                <div class="card-body">
+                    <form class="form-sign" action="Validar" method="POST">
+                        <div class="form-group text-center">
+                            <h3>Login</h3>
+                            <img src="img/logo.jpg" alt="70" width="170"/>
+                            <h4><label>Bienvenidos al Sistema de la Liga Barial "Semillitas del Futuro"</label></h4>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row p-5">
-                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="./assets/img/banner_img_02_1.jpg" alt="">
-                            </div>
-                            <div class="col-lg-6 mb-0 d-flex align-items-center">
-                                <div class="text-align-left">
-                                    <h1 class="h1">Inscribe a tu equipo</h1>
-                                    <h3 class="h2">Comunícate para mas información</h3>
-                                    <p>
-                                        ¡Inscríbe a tu equipo y participa en la emoción de la Liga Barrial Semillitas del Futuro! Convierte tu pasión por el fútbol en acción inscribiendo a tu equipo en nuestro torneo. Experimenta la camaradería, la competencia sana y el crecimiento personal en un ambiente familiar y divertido. ¡No pierdas la oportunidad de formar parte de esta apasionante temporada! ¡Inscríbete ahora y prepárate para mostrar tu talento en la cancha!
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="form-group"
+                             <label>Usuario:</label>
+                            <input type="text" name="txtuser" class="form-control"> 
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row p-5">
-                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img class="img-fluid" src="./assets/img/banner_img_03_1.jpg" alt="">
-                            </div>
-                            <div class="col-lg-6 mb-0 d-flex align-items-center">
-                                <div class="text-align-left">
-                                    <h1 class="h1">Escuela de Fútbol</h1>
-                                    <h3 class="h2">En proceso </h3>
-                                    <p>
-                                        ¡Próximamente lanzaremos nuestra emocionante Escuela de Fútbol para Niños! Estamos en proceso de crear un espacio donde los más pequeños podrán aprender, crecer y divertirse mientras desarrollan sus habilidades futbolísticas. ¡Mantente atento para más detalles sobre esta emocionante iniciativa! Mientras tanto, inscribe a tu equipo en nuestro torneo y forma parte de nuestra apasionada comunidad futbolística. ¡No pierdas la oportunidad de ser parte de esta experiencia única! ¡Inscríbete ahora y prepárate para disfrutar del fútbol en su máximo esplendor!
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="form-group"
+                             <label>Password:</label>
+                            <input type="password" name="txtpass" class="form-control"> 
                         </div>
-                    </div>
+                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary">
+                    </form>
                 </div>
-            </div>
-            <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-            <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-                <i class="fas fa-chevron-right"></i>
-            </a>
+            </div> 
         </div>
-        <!-- End Banner Hero -->
+        <br>
 
-
-        <!-- Start Categories of The Month -->
-        <section class="container py-5">
-            <div class="row text-center pt-3">
-                <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Inicia Sesion</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="login.jsp"><img src="./assets/img/category_img_01.png" class="rounded-circle img-fluid border"></a>
-                    <h5 class="text-center mt-3 mb-3">Administrador</h5>
-                    <p class="text-center"><a class="btn btn-success" href="login.jsp">Ingresar</a></p>
-                </div>
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="login.jsp"><img src="./assets/img/category_img_02.png" class="rounded-circle img-fluid border"></a>
-                    <h2 class="h5 text-center mt-3 mb-3">Representante</h2>
-                    <p class="text-center"><a class="btn btn-success" href="login.jsp">Ingresar</a></p>
-                </div>
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="login.jsp"><img src="./assets/img/category_img_03.png" class="rounded-circle img-fluid border"></a>
-                    <h2 class="h5 text-center mt-3 mb-3">Digitador</h2>
-                    <p class="text-center"><a class="btn btn-success" href="login.jsp">Ingresar</a></p>
-                </div>
-            </div>
-        </section>
-        <!-- End Categories of The Month -->
-
+        
 
                 <!-- Start Footer -->
         <footer class="bg-dark" id="tempaltemo_footer">
@@ -197,7 +122,7 @@
                 <div class="row">
 
                     <div class="col-md-4 pt-5">
-                        <h2 class="h2 text-success border-bottom pb-3 border-light logo">Información</h2>
+                        <h2 class="h2 text-success border-bottom pb-3 border-light logo">InformaciÃ³n</h2>
                         <ul class="list-unstyled text-light footer-link-list">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -274,6 +199,10 @@
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/templatemo.js"></script>
         <script src="assets/js/custom.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
         <!-- End Script -->
     </body>
 
