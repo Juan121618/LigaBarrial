@@ -50,3 +50,25 @@ CREATE TABLE Reportes (
     tipo ENUM('Tarjetas Amarillas', 'Goles', 'Tabla de Goleadores', 'Tabla de Posiciones') NOT NULL,
     contenido TEXT NOT NULL
 );
+
+
+-- Índice en la tabla Usuarios
+CREATE INDEX idx_usuario ON Usuarios(usuario);
+
+-- Índice compuesto en la tabla Actividades
+CREATE INDEX idx_actividades ON Actividades(equipo_local_id, equipo_visitante_id, fecha);
+
+
+-- Trigger en la tabla Actividades para verificar los límites de goles, tarjetas amarillas y rojas
+DELIMITER //
+CREATE TRIGGER actividad_limites
+BEFORE INSERT ON Actividades
+FOR EACH ROW
+BEGIN
+    IF NEW.goles_local < 0 OR NEW.goles_visitante < 0 OR NEW.tarjetas_amarillas < 0 OR NEW.tarjetas_rojas < 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Los valores de goles y tarjetas no pueden ser negativos';
+    END IF;
+    END;
+//
+DELIMITER ;
